@@ -1,17 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import { Provider } from 'react-redux';
+import FormField from './components/formField';
+import store from './redux/store';
+import PizzaTable from './components/pizzaTable';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
+    <Provider store={store}>
+      <>
+        <h1>Pizza List</h1>
+        <FormField />
+        <PizzaTable/>
+      </>
+    </Provider>
   )
 }
 
