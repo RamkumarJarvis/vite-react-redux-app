@@ -10,8 +10,6 @@ export const StockSlice = createSlice({
     initialState,
     reducers: {
         addStock: (state, action) => {
-            console.log("🚀 ~ state:", state)
-            console.log("🚀 ~ action:", action)
             state.items.push(action.payload)
         },
         deleteStock: (state, action) => {
@@ -19,10 +17,17 @@ export const StockSlice = createSlice({
         },
         setSearchQuery: (state, action) => {
             state.searchQuery = action.payload;
+        },
+        updateStock:(state,action)=>{
+            const updatedStock = action.payload;
+            const index = state.items.findIndex(stock => stock.id === updatedStock.id);
+            if (index !== -1) {
+                state.items[index] = updatedStock;
+            }
         }
     }
 });
 
-export const { addStock, deleteStock, setSearchQuery } = StockSlice.actions;
+export const { addStock, deleteStock, setSearchQuery, updateStock } = StockSlice.actions;
 
 export default StockSlice.reducer;
