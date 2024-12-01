@@ -5,6 +5,38 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors:{
+      /* MAIN */
+      'primary'     : '#3456FF',
+      'secondary'   : '#111643',
+      /* ACCENT */
+      'accent-1'    : '#800080',
+      'accent-2'    : '#022277',
+      'accent-3'    : '#F7F9FC',
+      'accent-4'    : '#34B27D',
+      'accent-5'    : '#121212',
+      'accent-6'    : '#1E2431',
+      /* NEUTRAL */
+      'neutral-1'   : '#666666',
+      'neutral-2'   : '#D6D6D6',
+      'neutral-3'   : '#AAAAAA',
+      'neutral-4'   : '#F5F7FA',
+      'neutral-5'   : '#FDEDEE',
+      'neutral-6'   : '#F6F8FB',
+      'neutral-7'   : '#E2E2E2',
+      'neutral-8'   : '#888888',
+      'neutral-9'   : '#F3F5F8',
+      'neutral-10'  : '#DBE0EB',
+      /* FEEDBACK */
+      'success'     : '#55BA45',
+      'success-2'   : '#55BA45',
+      'error'       : '#E90F0F',
+      'error-2'     : '#FF5E5B',
+      /* COMMON */
+      'white'       : '#FFFFFF',
+      'black'       : '#060D1A',
+      'black-1'       : '#1E1E1E',
+    },
     fontSize: {
       'small'   : '.625rem', // 10px
       'default' : '.75rem',  // 12px

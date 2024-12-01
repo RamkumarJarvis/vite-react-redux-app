@@ -2,26 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.5;
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --wheat : #FBF8EF;
+  --white : #FFFFFF;
+  --light-blue: #C9E6F0;
+  --light-gray: #F7F9FC;
+  --blue: #78B3CE;
+  --orange: #F96E2A;
+  --black: #1A2130;
 }
 * {
   scrollbar-width            : thin;
   -moz-appearance            : initial;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+*:focus{
+  outline: none;
+}
 
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--light-gray);
+  color: var(--black)
 }
 input,
 textarea,

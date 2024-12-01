@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import PizzaReducer from "./slice/pizzaSlice"
+import StockReducer from "./slice/stockSlice"
 
 const store = configureStore({
     devTools: true,
     reducer: {
-        pizzas: PizzaReducer
+        stocks: StockReducer
     }
 })
 export default store;
