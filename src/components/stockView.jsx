@@ -7,7 +7,7 @@ import TableView from "./tableVIew";
 export default function StockView() {
     return (
         <StockProvider>
-            <div className="p-32 bg-white">
+            <div className="p-32 pt-0 bg-white">
                 <SearchBox />
                 <TableView />
             </div>

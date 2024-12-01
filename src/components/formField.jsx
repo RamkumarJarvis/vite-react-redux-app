@@ -27,7 +27,7 @@ export default function FormField() {
         })
     }
     return (
-        <div className='p-40 bg-white rounded-md'>
+        <div className='p-40 pb-0 bg-white rounded-md'>
             <div className="text-xl font-bold">Admin Stock List</div>
             <div className="w-full pb-20 border-b border-solid mt-14 text-neutral-3 text-medium border-b-neutral-1/10">Update your stock details here</div>
             <form onSubmit={handleSubmit}>
