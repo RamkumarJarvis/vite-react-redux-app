@@ -7,8 +7,8 @@ export default function FormField() {
     const [formData, setFormData] = useState({
         name: '',
         desc: '',
-        price: null,
-        quantity: null,
+        price: '',
+        quantity: '',
     });
 
     const disPatch = useDispatch();

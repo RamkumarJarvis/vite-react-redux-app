@@ -3,7 +3,7 @@ import './App.css'
 import { Provider } from 'react-redux';
 import FormField from './components/formField';
 import store from './redux/store';
-import StockTable from './components/stockTable';
+import StockView from './components/stockView';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <Provider store={store}>
       <div className='mx-auto'>
         <FormField />
-        <StockTable/>
+        <StockView/>
       </div>
     </Provider>
   )
