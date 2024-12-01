@@ -29,12 +29,12 @@ export default function FormField() {
     return (
         <div className='p-40 bg-white rounded-md'>
             <div className="text-xl font-bold">Admin Shoe List</div>
-            <div className="w-full pb-20 border-b border-solid mt-14 text-neutral-3 text-medium border-b-neutral-1/10">Update your shoe details here</div>
+            <div className="w-full pb-20 border-b border-solid mt-14 text-neutral-3 text-medium border-b-neutral-1/10">Update your stock details here</div>
             <form onSubmit={handleSubmit}>
                 <div className='flex flex-col mt-20'>
                     <div >
                         <div>
-                            <label htmlFor="name" className='font-medium capitalize text-neutral-1 text-big'>Shoe Name</label>
+                            <label htmlFor="name" className='font-medium capitalize text-neutral-1 text-big'>Stock Name</label>
                             <div className='h-48 mt-10'>
                                 <input
                                     id='name'
@@ -72,10 +72,17 @@ export default function FormField() {
                                     id='price'
                                     className='w-full max-w-[335px] h-40 border border-solid rounded-md border-neutral-2 bg-accent-3 px-10 text-big font-medium focus:shadow-[0_0_0_0.2rem] focus:shadow-primary/10 hover:shadow-[0_0_0_0.2rem] hover:shadow-primary/10'
                                     type='number' 
+                                    step="0.01"
                                     min={0}
                                     placeholder='Price'
                                     value={formData.price}
-                                    onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                                    onChange={(e) => {
+                                        const numberic = parseFloat(parseFloat(e.target.value).toFixed(2));
+                                        setFormData({ 
+                                            ...formData, 
+                                            price: isNaN(numberic)?'':numberic
+                                        });
+                                    }}
                                     required
                                 />
                             </div>
@@ -98,7 +105,7 @@ export default function FormField() {
                     </div>
                 </div>
                 <div className='flex justify-center gap-10 mt-10'>
-                    <button className='py-10 text-white border-none cursor-pointer bg-primary text-medium px-14 rounded-6' type='submit'>Add Shoe</button>
+                    <button className='py-10 text-white border-none cursor-pointer bg-primary text-medium px-14 rounded-6' type='submit'>Add Stock</button>
                 </div>
             </form>
             <ToastContainer />

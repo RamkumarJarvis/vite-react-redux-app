@@ -81,7 +81,7 @@ export default function TableView() {
                     </div>
                 ) : dialogAction === 'edit' && selectedStock ? (
                     <>
-                        <div className='p-40 bg-white rounded-md'>
+                        <div className='p-40 pt-10 bg-white rounded-md'>
                             <form onSubmit={handleEdit}>
                                 <div className='flex flex-col mt-20'>
                                     <div >
@@ -124,11 +124,18 @@ export default function TableView() {
                                                     id='price'
                                                     className='w-full max-w-[335px] h-40 border border-solid rounded-md border-neutral-2 bg-accent-3 px-10 text-big font-medium focus:shadow-[0_0_0_0.2rem] focus:shadow-primary/10 hover:shadow-[0_0_0_0.2rem] hover:shadow-primary/10'
                                                     type='number'
-                                                    min={0}
                                                     placeholder='Price'
                                                     value={editedStock.price}
-                                                    onChange={(e) => setEditedStock({ ...editedStock, price: e.target.value })}
                                                     required
+                                                    step="0.01"
+                                                    min={0}
+                                                    onChange={(e) => {
+                                                        const numberic = parseFloat(parseFloat(e.target.value).toFixed(2));
+                                                        setEditedStock({ 
+                                                            ...editedStock, 
+                                                            price: isNaN(numberic)?'':numberic
+                                                        });
+                                                    }}
                                                 />
                                             </div>
                                         </div>
@@ -150,7 +157,7 @@ export default function TableView() {
                                     </div>
                                 </div>
                                 <div className='flex justify-center gap-10 mt-10'>
-                                    <button className='py-10 text-white border-none cursor-pointer bg-primary text-medium px-14 rounded-6' type='submit'>Add Shoe</button>
+                                    <button className='py-10 text-white border-none cursor-pointer bg-primary text-medium px-14 rounded-6' type='submit'>Update Stock</button>
                                 </div>
                             </form>
                         </div>
