@@ -11,7 +11,7 @@ export default function SearchBox() {
         dispatch(setSearchQuery(e.target.value));
     }
     return (
-        <div className="mb-10">
+        <div className="flex justify-end mb-10">
             <label className="flex w-[300px] h-40 overflow-hidden border rounded-md border-neutral-2/50">
                 <div className="flex items-center h-full px-16 bg-accent-3">
                     <FontAwesomeIcon className="w-20 h-20" icon={faMagnifyingGlass} />
