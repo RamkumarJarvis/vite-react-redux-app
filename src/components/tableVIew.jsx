@@ -6,6 +6,7 @@ import DialogPopup from "./dialogBox";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteStock, updateStock } from "../redux/slice/stockSlice";
+import { toast } from "react-toastify";
 export default function TableView() {
     const { filteredStocks } = useStockContext();
     const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -30,6 +31,7 @@ export default function TableView() {
     const handleDelete = () => {
         if (selectedStock) {
             dispatch(deleteStock(selectedStock.id));
+            toast.success("Stock deleted")
             closeDialog();
         }
     }
@@ -37,6 +39,7 @@ export default function TableView() {
         e.preventDefault();
         if (editedStock) {
             dispatch(updateStock(editedStock));
+            toast.success("Stock updated")
             closeDialog();
         }
     };
