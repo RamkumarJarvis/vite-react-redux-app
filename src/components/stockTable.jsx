@@ -11,6 +11,11 @@ export default function StockTable() {
         console.log("🚀 ~ handleSearch ~ e:", e)
         disPatch(setSearchQuery(e.target.value));
     }
+    const filteredStocks = stocksList.filter(stock => 
+        stock.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        stock.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        stock.price.toLowerCase().includes(searchQuery.toLowerCase())
+    );
     return (
         <div className="p-32 bg-white">
             <div className="mb-10">
@@ -34,7 +39,7 @@ export default function StockTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    {stocksList.map((stock, index) => (
+                    {filteredStocks.map((stock, index) => (
                         <tr key={stock.id} className="h-40 text-center normal-case bg-accent-3 bg-opacity-4 font-default">
                             <td className="overflow-hidden text-left text-black border-b border-opacity-50 border-neutral-2 first:pl-20 text-big">{index + 1}</td>
                             <td className="overflow-hidden text-left text-black border-b border-opacity-50 border-neutral-2 first:pl-20 text-big py-14 pr-14">{stock.name}</td>
