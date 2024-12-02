@@ -78,7 +78,7 @@ export default function TableView() {
                 {dialogAction === 'delete' && selectedStock ? (
                     <div className='p-40 pt-10 bg-white rounded-md w-[500px]'>
                         <div className="w-full pb-20 mt-14 text-neutral-1 text-big ">Are you sure to remove this stock</div>
-                        <div className="flex gap-10">
+                        <div className="flex gap-10 justify-end">
                             <button className='py-10 text-white border-none cursor-pointer w-80 bg-primary text-medium px-14 rounded-6' onClick={handleDelete}>Yes</button>
                         </div>
                     </div>
